@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimación de Calorías Quemadas en Ejercicio</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Estimación de Calorías Quemadas en Ejercicio</h1>
+        <form id="calculator-form">
+            <div class="mb-3">
+                <label for="weight" class="form-label">Peso (kg)</label>
+                <input type="number" id="weight" class="form-control" min="1" max="120" required>
+                <div class="invalid-feedback">El peso debe estar entre 1 y 120 kg</div>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Tiempo (min)</label>
+                <input type="number" id="time" class="form-control" min="5" max="150" required>
+                <div class="invalid-feedback">El tiempo debe estar entre 5 y 150 minutos</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Actividad</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="walking" name="activity" value="3.5" checked>
+                    <label class="form-check-label" for="walking">Caminar</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="running" name="activity" value="8.0">
+                    <label class="form-check-label" for="running">Correr</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+        <div id="result" class="alert alert-info" role="alert"></div>
+        <div id="history" class="mt-3">
+            <h2>Historial de cálculos</h2>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <script src="/assets/js/calcularCalorias.js"></script>
+</body>
+</html>
